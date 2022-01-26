@@ -17,41 +17,53 @@ This entails
 
 User Stories
 1. As a medical student, 
-a. I want to analyse my steps when providing treatment 
-i. so that I can provide the correct diagnosis.
+   I want to analyse my steps when providing treatment 
+   so that I can provide the correct diagnosis.
 
 
 
 2. As a medical student, 
-a. I want to use a digital tool to practice my clinical reasoning 
-i. so that I can better my conversation skills with my patients
+   I want to use a digital tool to practice my clinical reasoning 
+   so that I can better my conversation skills with my patients
 
 
 3. As a medical student,
-a. I want to visualise potential scenarios that I can encounter 
-i. so that I can focus on my response and not waste too much time on 
-how to present them.
+   I want to visualise potential scenarios that I can encounter 
+   so that I can focus on my response and not waste too much time on how to present them.
 
 
 4. As a medical teacher,
-a. I want to test my students medical knowledge using technology that simulates patient scenarios 
-i. so that I can mark students' responses to questions in varying context in a simple and effective manner.
+   I want to test my students medical knowledge using technology that simulates patient scenarios 
+   so that I can mark students' responses to questions in varying context in a simple and effective manner.
 
 
 5. As a medical student,
-a. I want to study a patient symptoms 
-i. so that I can identify what problem they have and give the correct diagnosis
+   I want to study a patient symptoms 
+   so that I can identify what problem they have and give the correct diagnosis
+
+
+
+User Stories for Sprint 1: (Asked to be included by James Hoey) 
+1. As an app user (student/medical doctor), I want to create an account for the system so that when I login I will be granted access to the system.
+2. As an app user (medical doctor/student), I want to be able to login with my personal username and password so that I can access any information that I have on my account 
+3. As an app user (medical doctor or student), I want to access a dashboard after I login with the correct details so that I can see essential information and navigate to other features in the app 
 
 
 
 
 Questions for the Client
-1. How complex would do you need the scenarios to be.
-2. What way do we want users to respond to the scenarios.? (1-10 | a, b, c) 
-3. What conditions for failure? 
-4. Does the program mark the test or do you? Requirement 2?
-5. Do we show the users their scores? 
-6. What do you want to see in the summary?
+
+1. How complex would you like the scenarios to be. (Elaborative text or simple questions and answers) 
+
+2. How should the users respond to the scenarios.? (Very Likely-Very Unlikely scale/Multiple choice/Text input)   
+
+3. What are the conditions for failure? (Would the simulator end at a mistake or are errors only brought up at the end of a diagnosis) 
+
+4. Does the program mark the test or do you? (Based on Requirement 2) 
+
+5. Do we show the users their scores? (Would inform them of their performance at each stage) 
+
+6. What is the necessary information which should be in the summary? (Marks/Breakdown of each question/Other important info) 
 
 
 
