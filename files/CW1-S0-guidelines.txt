@@ -1,0 +1,65 @@
+CO2201 Software Engineering Project 2022
+
+
+
+Definition of Done
+Main definition: Satisfy the User Stories 
+This entails 
+• Helpful comments and changes configurations are well documented 
+• Have peer code assessments 
+• No errors with building each iteration of the programs
+• This program should work 100% of the time while the user is using it appropriately 
+• This program must be easy to understand and make use of 
+• This program must have a clear and simple user interface
+
+
+
+
+User Stories
+1. As a medical student, 
+a. I want to analyse my steps when providing treatment 
+i. so that I can provide the correct diagnosis.
+
+
+
+2. As a medical student, 
+a. I want to use a digital tool to practice my clinical reasoning 
+i. so that I can better my conversation skills with my patients
+
+
+3. As a medical student,
+a. I want to visualise potential scenarios that I can encounter 
+i. so that I can focus on my response and not waste too much time on 
+how to present them.
+
+
+4. As a medical teacher,
+a. I want to test my students medical knowledge using technology that simulates patient scenarios 
+i. so that I can mark students' responses to questions in varying context in a simple and effective manner.
+
+
+5. As a medical student,
+a. I want to study a patient symptoms 
+i. so that I can identify what problem they have and give the correct diagnosis
+
+
+
+
+Questions for the Client
+1. How complex would do you need the scenarios to be.
+2. What way do we want users to respond to the scenarios.? (1-10 | a, b, c) 
+3. What conditions for failure? 
+4. Does the program mark the test or do you? Requirement 2?
+5. Do we show the users their scores? 
+6. What do you want to see in the summary?
+
+
+
+Group Rules
+1. Always attend client meetings.
+2. 3 Quality GIT pushes a week. (Subject to change)
+3. At least 3 hours of work dedicated to the project a week.
+4. If there are any issues, please inform the group discord ahead of time. 
+5. Make use of the GitLab board at the start of every sprint.
+6. Help others once you're done your task.
+7. Be active during the sprints with the group members
