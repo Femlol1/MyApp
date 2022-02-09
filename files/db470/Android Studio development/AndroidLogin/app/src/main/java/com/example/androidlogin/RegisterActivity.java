@@ -38,18 +38,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btnRegister:
-            register();
-            /*Intent Intent = new Intent(this, LoginActivity.class);
-            startActivity(Intent)*/;
-            }
-
-
-
+                if (register() == false) {
+                    Intent Intent = new Intent(this, LoginActivity.class);
+                    startActivity(Intent);
+                }
+        }
     }
 
-    private void register() {
+    private boolean register() {
         String firstname =  firstName.getText().toString().trim();
         String lastname =  lastName.getText().toString().trim();
         String universtity =  inputUniversity.getText().toString().trim();
@@ -61,23 +59,19 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         if (firstname.isEmpty()) {
             firstName.setError("First name is required");
             firstName.requestFocus();
-            return;
-
-
+            return true;
         }
 
         if (lastname.isEmpty()) {
             lastName.setError("Last name is required");
             lastName.requestFocus();
-            return;
-
-
+            return true;
         }
 
         if (universtity.isEmpty()) {
             inputUniversity.setError("University name is required");
             inputUniversity.requestFocus();
-            return;
+            return true;
 
 
         }
@@ -85,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         if (year.isEmpty()) {
             inputYear.setError("University year is required");
             inputYear.requestFocus();
-            return;
+            return true;
 
 
         }
@@ -93,28 +87,29 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         if (email.isEmpty()) {
             inputEmail.setError("Email is required");
             inputEmail.requestFocus();
-            return;
+            return true;
 
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
         inputEmail.setError("please provide a valid email address");
         inputEmail.requestFocus();
-        return;
+        return true;
         }
 
         if (password.isEmpty()) {
             inputPassword.setError("Password is required");
             inputPassword.requestFocus();
-            return;
+            return true;
 
 
         }
         if(password.length() < 6) {
             inputPassword.setError("Password should be at least 6 characters");
             inputPassword.requestFocus();
-            return;
+            return true;
+        }else{
+            return false;
         }
-
 
     }
 }
