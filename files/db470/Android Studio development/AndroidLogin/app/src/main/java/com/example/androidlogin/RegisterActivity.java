@@ -29,6 +29,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         btnRegister = (Button) findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(this);
     }
+    public void goToLoginPage(View view) {
+        Intent Intent = new Intent(this, LoginActivity.class);
+        startActivity(Intent);
+    }
 
     @Override
     public void onClick(View v) {

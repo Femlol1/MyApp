@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    /*//on click go to main page
+    //on click go to main page
     public void goToMainPage(View view) {
         Intent Intent = new Intent(this, MainActivity.class);
         startActivity(Intent);
@@ -75,5 +75,5 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void goToRegisterPage(View view) {
         Intent Intent = new Intent(this, RegisterActivity.class);
         startActivity(Intent);
-    }*/
+    }
 }
