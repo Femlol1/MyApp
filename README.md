@@ -8,15 +8,14 @@ In the files folder, we have our own implementation of the login system stored i
 
 To install our latest version that we want to submit, please do the following.
 
-1. Checkout to the branch: anm30
-2. Go to the files/anm30 directory
-3. Here, you'll notice a folder called "login_system_v1.1_S0_FINAL"
-4. Copy this folder to your local machine and use AndroidStudio to Open the project.
-5. All configurations are stored so nothing should be changed.
-6. On the left of the Andriod Studio, look at the project structure and right-click on "app" and click Run.
-7. You should see a login page, click on the register link.
-8. Follow the prompts and enter details.
-9. Once your account is created, you can login with those credentials (email and password) to go to the user dashboard!
+1. Go to the files/anm30 directory
+2. Here, you'll notice a folder called "login_system_v1.1_S0_FINAL"
+3. Copy this folder to your local machine and use AndroidStudio to Open the project.
+4. All configurations are stored so nothing should be changed.
+5. On the left of the Andriod Studio, look at the project structure and right-click on "app" and click Run.
+6. You should see a login page, click on the register link.
+7. Follow the prompts and enter details.
+8. Once your account is created, you can login with those credentials (email and password) to go to the user dashboard!
 
 
 IMPORTANT: If you see the option to Run tests (when you click on "app"), then look at the top bar of the IDE to find a hammer icon. Just to the right of it is a configurations editor where you click and choose "app". Then click the triangular green run button. This should run the program and a login page should appear.
