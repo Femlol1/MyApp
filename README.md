@@ -19,4 +19,4 @@ To install our latest version that we want to submit, please do the following.
 9. Once your account is created, you can login with those credentials (email and password) to go to the user dashboard!
 
 
-IMPORTANT: If you see the option to Run tests (when you click on "app"), then look at the top bar of the IDE to find a hammer icon. Just to the right of it is a configurations editor where to you click and choose "app". Then click the triangular green run button. This should run the programm and a login page should appear.
+IMPORTANT: If you see the option to Run tests (when you click on "app"), then look at the top bar of the IDE to find a hammer icon. Just to the right of it is a configurations editor where you click and choose "app". Then click the triangular green run button. This should run the programm and a login page should appear.
