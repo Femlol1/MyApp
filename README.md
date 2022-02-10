@@ -2,7 +2,7 @@
 
 # Installation instructions for Sprint 1.
 
-As a group, each one of us created a login system (as part of the user stories for this sprint) on our own with a little bit of collaboration. This was to gauge our skill level which would be immensely important going forward and when assigning tasks.
+As a group, each one of us created a login system (as part of the user stories for this sprint) on our own whilst collaborating with each other on different aspects of the login system. This was to gauge our skill level which would be immensely important going forward and when assigning tasks.
 
 In the files folder, we have our own implementation of the login system stored in folders with our university ID. There are different versions of our login system within those folders.
 
