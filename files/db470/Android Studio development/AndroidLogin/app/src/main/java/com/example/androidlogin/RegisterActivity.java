@@ -19,7 +19,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-
         firstName = (EditText) findViewById(R.id.inputFirstName);
         lastName = (EditText) findViewById(R.id.inputLastName);
         inputUniversity = (EditText) findViewById(R.id.inputUniversity);
@@ -29,12 +28,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         btnRegister = (Button) findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(this);
-
     }
-    /*public void goToLoginPage(View view) {
-        Intent Intent = new Intent(this, LoginActivity.class);
-        startActivity(Intent);
-    }*/
 
     @Override
     public void onClick(View v) {
@@ -72,23 +66,18 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             inputUniversity.setError("University name is required");
             inputUniversity.requestFocus();
             return true;
-
-
         }
 
         if (year.isEmpty()) {
             inputYear.setError("University year is required");
             inputYear.requestFocus();
             return true;
-
-
         }
 
         if (email.isEmpty()) {
             inputEmail.setError("Email is required");
             inputEmail.requestFocus();
             return true;
-
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
         inputEmail.setError("please provide a valid email address");
@@ -100,8 +89,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             inputPassword.setError("Password is required");
             inputPassword.requestFocus();
             return true;
-
-
         }
         if(password.length() < 6) {
             inputPassword.setError("Password should be at least 6 characters");
@@ -110,6 +97,5 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }else{
             return false;
         }
-
     }
 }
