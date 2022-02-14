@@ -25,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private Button btnRegister;
     private ProgressBar progressBar;
 
-    private boolean Errors;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,12 +55,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnRegister:
-                Errors = false;
+
                 register();
-                if (Errors == false) {
-                    Intent Intent = new Intent(this, LoginActivity.class);
-                    startActivity(Intent);
-                }
+
+                Intent Intent = new Intent(this, LoginActivity.class);
+                startActivity(Intent);
+
         }
     }
 
@@ -76,54 +76,46 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         if (firstname.isEmpty()) {
             firstName.setError("First name is required");
             firstName.requestFocus();
-            Errors = true;
             return;
         }
 
         if (lastname.isEmpty()) {
             lastName.setError("Last name is required");
             lastName.requestFocus();
-            Errors = true;
             return;
         }
 
         if (universtity.isEmpty()) {
             inputUniversity.setError("University name is required");
             inputUniversity.requestFocus();
-            Errors = true;
             return;
         }
 
         if (year.isEmpty()) {
             inputYear.setError("University year is required");
             inputYear.requestFocus();
-            Errors = true;
             return;
         }
 
         if (email.isEmpty()) {
             inputEmail.setError("Email is required");
             inputEmail.requestFocus();
-            Errors = true;
             return;
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             inputEmail.setError("please provide a valid email address");
             inputEmail.requestFocus();
-            Errors = true;
             return;
         }
 
         if (password.isEmpty()) {
             inputPassword.setError("Password is required");
             inputPassword.requestFocus();
-            Errors = true;
             return;
         }
         if(password.length() < 6) {
             inputPassword.setError("Password should be at least 6 characters");
             inputPassword.requestFocus();
-            Errors = true;
             return;
         }
             progressBar.setVisibility(View.VISIBLE);
@@ -147,14 +139,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                         } else {
                                             Toast.makeText(RegisterActivity.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
                                             progressBar.setVisibility(View.GONE);
-                                            Errors = true;
                                         }
                                     }
                                 });
                             } else {
                                 Toast.makeText(RegisterActivity.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
-                                Errors = true;
+
                             }
                         }
                     });
