@@ -57,9 +57,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             case R.id.btnRegister:
 
                 register();
-
-                Intent Intent = new Intent(this, LoginActivity.class);
-                startActivity(Intent);
+                break;
+                /*Intent Intent = new Intent(this, LoginActivity.class);
+                startActivity(Intent);*/
 
         }
     }
@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private void register() {
         String firstname =  firstName.getText().toString().trim();
         String lastname =  lastName.getText().toString().trim();
-        String universtity =  inputUniversity.getText().toString().trim();
+        String university =  inputUniversity.getText().toString().trim();
         String year =  inputYear.getText().toString().trim();
         String  email =  inputEmail.getText().toString().trim();
         String password =  inputPassword.getText().toString().trim();
@@ -85,7 +85,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
-        if (universtity.isEmpty()) {
+        if (university.isEmpty()) {
             inputUniversity.setError("University name is required");
             inputUniversity.requestFocus();
             return;
@@ -124,9 +124,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                User user = new User(firstname, lastname, email, password, universtity, year);
+                                User user = new User(firstname, lastname, email, password, university, year);
 
-                                FirebaseDatabase.getInstance().getReference("users")
+                                FirebaseDatabase.getInstance().getReference("Users")
                                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                         .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
@@ -134,8 +134,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
                                         if (task.isSuccessful()) {
                                             Toast.makeText(RegisterActivity.this, "User has been register successfully!", Toast.LENGTH_LONG).show();
-                                            progressBar.setVisibility(View.VISIBLE);
-                                            // redirect if register failed
+                                            progressBar.setVisibility(View.GONE);
+                                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+
                                         } else {
                                             Toast.makeText(RegisterActivity.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
                                             progressBar.setVisibility(View.GONE);
