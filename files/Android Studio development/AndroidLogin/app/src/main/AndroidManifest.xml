@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLogin">
         <activity
+            android:name=".SelectPatient"
+            android:exported="false" />
+        <activity
+            android:name=".SearchPatientActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
