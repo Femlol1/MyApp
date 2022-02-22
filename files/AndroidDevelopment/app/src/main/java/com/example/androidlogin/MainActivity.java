@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView createPatient;
 
+    private TextView viewPatients;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +20,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         createPatient = (TextView) findViewById(R.id.addPatient);
         createPatient.setOnClickListener(this);
+
+        viewPatients = findViewById(R.id.viewPatients);
+        viewPatients.setOnClickListener(this);
+
+
     }
     public void goToLoginPage(View view) {
         Intent Intent = new Intent(this, LoginActivity.class);
@@ -30,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.addPatient:
                 startActivity(new Intent(MainActivity.this, CreatePatient.class));
                 break;
+            case R.id.viewPatients:
+                startActivity(new Intent(MainActivity.this, PatientViewActivity.class));
 
         }
     }
