@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class PatientView extends AppCompatActivity {
+public class PatientViewActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference database;
     PatientAdapter patientAdapter;
@@ -28,7 +28,7 @@ public class PatientView extends AppCompatActivity {
         setContentView(R.layout.activity_patient_view);
 
         recyclerView = findViewById(R.id.patientList);
-        database = FirebaseDatabase.getInstance().getReference("Patients1");
+        database = FirebaseDatabase.getInstance().getReference("Patients");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

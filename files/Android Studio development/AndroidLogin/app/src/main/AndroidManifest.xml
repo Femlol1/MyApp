@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLogin">
         <activity
-            android:name=".SearchPatientActivity"
-            android:exported="false" />
+            android:name=".PatientViewActivity"
+            />
         <activity
             android:name=".LoginActivity"
             android:exported="true">

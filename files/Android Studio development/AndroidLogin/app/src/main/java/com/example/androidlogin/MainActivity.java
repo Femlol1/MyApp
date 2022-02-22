@@ -15,10 +15,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView tvpatients = findViewById(R.id.patients);
+        TextView patients = findViewById(R.id.patients);
         TextView logout = findViewById(R.id.logout);
 
-        tvpatients.setOnClickListener(this);
+        patients.setOnClickListener(this);
         logout.setOnClickListener(this);
 
     }
@@ -29,10 +29,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.patients:
                 Toast.makeText(this,"Patients View clicked", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, PatientView.class));
+                startActivity(new Intent(MainActivity.this, PatientViewActivity.class));
+                break;
             case R.id.logout:
                 Toast.makeText(this,"Logout clicked", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, LoginActivity.class));
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                break;
         }
     }
 }

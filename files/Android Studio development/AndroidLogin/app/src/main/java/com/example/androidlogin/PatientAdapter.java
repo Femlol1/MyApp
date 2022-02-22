@@ -32,7 +32,7 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientV
     public void onBindViewHolder(@NonNull PatientAdapter.PatientViewHolder holder, int position) {
         Patient patient = list.get(position);
         holder.name.setText(patient.getName());
-        holder.dob.setText(patient.getDOB());
+        holder.dob.setText(patient.getDob());
         holder.gender.setText(patient.getGender());
     }
 

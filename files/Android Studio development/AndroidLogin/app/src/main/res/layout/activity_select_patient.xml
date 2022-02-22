@@ -5,8 +5,7 @@
     android:id="@+id/recylerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
-    tools:context=".SelectPatient">
+    android:background="@drawable/bg">
 
     <TextView
         android:id="@+id/textViewLogo"
