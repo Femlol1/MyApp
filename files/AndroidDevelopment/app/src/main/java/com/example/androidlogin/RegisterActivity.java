@@ -59,8 +59,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
                 register();
                 break;
-                /*Intent Intent = new Intent(this, LoginActivity.class);
-                startActivity(Intent);*/
 
         }
     }
@@ -120,6 +118,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
             progressBar.setVisibility(View.VISIBLE);
+
+
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
