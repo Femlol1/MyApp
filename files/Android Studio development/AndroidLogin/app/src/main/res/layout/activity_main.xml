@@ -29,7 +29,6 @@
         android:layout_height="wrap_content"
         android:text="logout"
         android:textColor="@color/white"
-        android:onClick="goToLoginPage"
         app:layout_constraintBottom_toTopOf="@+id/header"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.956"
