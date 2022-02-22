@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLogin">
         <activity
+            android:name=".PatientViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PatientAdapter"
+            android:exported="false" />
+        <activity
             android:name=".cp_geo_epi_factors"
             android:exported="false" />
         <activity
