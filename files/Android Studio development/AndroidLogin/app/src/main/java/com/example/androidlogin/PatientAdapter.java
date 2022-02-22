@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-
+//The purpose of the class is to present each patient on the patient view activity
 public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientViewHolder> {
 
     Context context;
@@ -34,30 +34,30 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientV
         holder.name.setText(patient.getName());
         holder.dob.setText(patient.getDob());
         holder.gender.setText(patient.getGender());
-        holder.tv4.setText(patient.getAddress());
-        holder.tv5.setText(patient.getRace());
-        holder.tv6.setText(patient.getOccupationalHistory());
-        holder.tv7.setText(patient.getHospital());
-        holder.tv8.setText(patient.getIdAndNo());
-        holder.tv9.setText(patient.getNextOfKin());
-        holder.tv10.setText(patient.getNextOfKinAddress());
-        holder.tv11.setText(patient.getProfessionalTraining());
-        holder.tv12.setText(patient.getRecentSourceOfFood());
-        holder.tv13.setText(patient.getRecentSourceOfWater());
-        holder.tv14.setText(patient.getRecentSanitationSystem());
-        holder.tv15.setText(patient.getRegDate());
-        holder.tv16.setText(patient.getTrainingHistory());
-        holder.tv17.setText(patient.getClan());
-        holder.tv18.setText(patient.getTotem());
-        holder.tv19.setText(patient.getTribe());
-        holder.tv20.setText(patient.getMaritalStatus());
-        holder.tv21.setText(patient.getWeatherTransition());
-        holder.tv22.setText(patient.getLongTermEnvironmentExposure());
-        holder.tv23.setText(patient.getEndemicDiseaseRegion());
-        holder.tv24.setText(patient.getDiseaseVectors());
-        holder.tv25.setText(patient.getCommunicableDiseaseContact());
-        holder.tv26.setText(patient.getAmbientTemperature());
-        holder.tv27.setText(patient.getRelativeHumidity());
+        holder.address.setText(patient.getAddress());
+        holder.race.setText(patient.getRace());
+        holder.occupationalHistory.setText(patient.getOccupationalHistory());
+        holder.hospital.setText(patient.getHospital());
+        holder.idAndNo.setText(patient.getIdAndNo());
+        holder.nextOfKin.setText(patient.getNextOfKin());
+        holder.nextOfKinAddress.setText(patient.getNextOfKinAddress());
+        holder.professionalTraining.setText(patient.getProfessionalTraining());
+        holder.recentSourceOfFood.setText(patient.getRecentSourceOfFood());
+        holder.recentSourceOfWater.setText(patient.getRecentSourceOfWater());
+        holder.recentSanitationSystem.setText(patient.getRecentSanitationSystem());
+        holder.regDate.setText(patient.getRegDate());
+        holder.trainingHistory.setText(patient.getTrainingHistory());
+        holder.clan.setText(patient.getClan());
+        holder.totem.setText(patient.getTotem());
+        holder.tribe.setText(patient.getTribe());
+        holder.maritalStatus.setText(patient.getMaritalStatus());
+        holder.weatherTransition.setText(patient.getWeatherTransition());
+        holder.longTermEnvironmentExposure.setText(patient.getLongTermEnvironmentExposure());
+        holder.endemicDiseaseRegion.setText(patient.getEndemicDiseaseRegion());
+        holder.diseaseVectors.setText(patient.getDiseaseVectors());
+        holder.communicableDiseaseContact.setText(patient.getCommunicableDiseaseContact());
+        holder.ambientTemperature.setText(patient.getAmbientTemperature());
+        holder.relativeHumidity.setText(patient.getRelativeHumidity());
     }
 
     @Override
@@ -67,39 +67,39 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientV
 
     public static class PatientViewHolder extends RecyclerView.ViewHolder{
 
-        TextView name, dob, gender, tv4, tv5, tv6, tv7, tv8, tv9, tv10, tv11,
-                tv12, tv13, tv14, tv15, tv16, tv17, tv18, tv19, tv20, tv21,
-                tv22, tv23, tv24, tv25, tv26, tv27;
+        TextView name, dob, gender, address, race, occupationalHistory, hospital, idAndNo, nextOfKin, nextOfKinAddress, professionalTraining,
+                recentSourceOfFood, recentSourceOfWater, recentSanitationSystem, regDate, trainingHistory, clan, totem, tribe, maritalStatus, weatherTransition,
+                longTermEnvironmentExposure, endemicDiseaseRegion, diseaseVectors, communicableDiseaseContact, ambientTemperature, relativeHumidity;
 
         public PatientViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.textViewName);
             dob = itemView.findViewById(R.id.textViewDOB);
             gender = itemView.findViewById(R.id.textViewGender);
-            tv4 = itemView.findViewById(R.id.textView4);
-            tv5 = itemView.findViewById(R.id.textView5);
-            tv6 = itemView.findViewById(R.id.textView6);
-            tv7 = itemView.findViewById(R.id.textView7);
-            tv8 = itemView.findViewById(R.id.textView8);
-            tv9 = itemView.findViewById(R.id.textView9);
-            tv10 = itemView.findViewById(R.id.textView10);
-            tv11 = itemView.findViewById(R.id.textView11);
-            tv12 = itemView.findViewById(R.id.textView12);
-            tv13 = itemView.findViewById(R.id.textView13);
-            tv14 = itemView.findViewById(R.id.textView14);
-            tv15 = itemView.findViewById(R.id.textView15);
-            tv16 = itemView.findViewById(R.id.textView16);
-            tv17 = itemView.findViewById(R.id.textView17);
-            tv18 = itemView.findViewById(R.id.textView18);
-            tv19 = itemView.findViewById(R.id.textView19);
-            tv20 = itemView.findViewById(R.id.textView20);
-            tv21 = itemView.findViewById(R.id.textView21);
-            tv22 = itemView.findViewById(R.id.textView22);
-            tv23 = itemView.findViewById(R.id.textView23);
-            tv24 = itemView.findViewById(R.id.textView24);
-            tv25 = itemView.findViewById(R.id.textView25);
-            tv26 = itemView.findViewById(R.id.textView26);
-            tv27 = itemView.findViewById(R.id.textView27);
+            address = itemView.findViewById(R.id.textViewAddress);
+            race = itemView.findViewById(R.id.textViewRace);
+            occupationalHistory = itemView.findViewById(R.id.textViewOccupationalHistory);
+            hospital = itemView.findViewById(R.id.textViewHospital);
+            idAndNo = itemView.findViewById(R.id.textViewIdAndNo);
+            nextOfKin = itemView.findViewById(R.id.textViewNextOfKin);
+            nextOfKinAddress = itemView.findViewById(R.id.textViewNextOfKinAddress);
+            professionalTraining = itemView.findViewById(R.id.textViewProfessionalTraining);
+            recentSourceOfFood = itemView.findViewById(R.id.textViewRecentSourceOfFood);
+            recentSourceOfWater = itemView.findViewById(R.id.textViewRecentSourceOfWater);
+            recentSanitationSystem = itemView.findViewById(R.id.textViewRecentSanitationSystem);
+            regDate = itemView.findViewById(R.id.textViewRegDate);
+            trainingHistory = itemView.findViewById(R.id.textViewTrainingHistory);
+            clan = itemView.findViewById(R.id.textViewClan);
+            totem = itemView.findViewById(R.id.textViewTotem);
+            tribe = itemView.findViewById(R.id.textViewTribe);
+            maritalStatus = itemView.findViewById(R.id.textViewMaritalStatus);
+            weatherTransition = itemView.findViewById(R.id.textViewWeatherTransition);
+            longTermEnvironmentExposure = itemView.findViewById(R.id.textViewLongTermEnvironmentExposure);
+            endemicDiseaseRegion = itemView.findViewById(R.id.textViewEndemicDiseaseRegion);
+            diseaseVectors = itemView.findViewById(R.id.textViewDiseaseVectors);
+            communicableDiseaseContact = itemView.findViewById(R.id.textViewCommunicableDiseaseContact);
+            ambientTemperature = itemView.findViewById(R.id.textViewAmbientTemperature);
+            relativeHumidity = itemView.findViewById(R.id.textViewRelativeHumidity);
         }
     }
 }

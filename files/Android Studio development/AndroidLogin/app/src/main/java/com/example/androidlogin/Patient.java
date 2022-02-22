@@ -1,6 +1,6 @@
 package com.example.androidlogin;
 
-//This class will mimic the variable naming on the firebase data bases
+//This class's attributes must be the same as the attributes in the Firebase table
 public class Patient {
 
     public String name, dob, gender, address, ambientTemperature,
