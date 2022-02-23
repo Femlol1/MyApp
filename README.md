@@ -15,11 +15,10 @@ PREREQUISITES:
 4. On the left of the Android Studio, look at the project structure and right-click on "app" and click Run.
 5. You should see a login page, Use these credentials - U: testuser@le.ac.uk and P: test1234
 6. If you are connected to the internet then you should successfully login and be redirected to the Dashboard.
-  TO ADD A PATIENT FOLLOW THESE STEPS
-7. Press "Add patient" and fill the entire form of 4 screens.
+7. TO ADD A PATIENT FOLLOW STEPS (7-9): Press "Add patient" and fill the entire form of 4 screens.
 8. Once, you submit the details and add patient to database (with an internet connection), you can view those details in "View patients".
-  TO VIEW ALL PATIENTS FOLLOW THESE STEPS
-9. Press "View Patients" to go to a screen with many patients' details, scroll down to find your newly added patient information!
+
+9. TO VIEW ALL PATIENTS FOLLOW THESE STEP 9: Press "View Patients" to go to a screen with many patients' details, scroll down to find your newly added patient information!
 
 
 IMPORTANT: If you see the option to Run tests (when you click on "app"), then look at the top bar of the IDE to find a hammer icon. Just to the right of it is a configurations editor where you click and choose "app". Then click the triangular green run button. This should run the program and a login page should appear.
