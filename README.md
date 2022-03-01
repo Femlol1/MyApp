@@ -1,5 +1,10 @@
 # GitLab repository for CO2201 Group Projects
 
+## IMPORTANT NOTE: Alternate accounts of members used in this repo:
+* RuHostile = Dante Baptiste (db470)
+* Femlol & root = Femi Osibemekun (oo158)
+* Abdul Nafey = Abdul Nafey Mohammed (anm30)
+
 # Installation instructions for Sprint 1.
 
 As a group, each one of us created a login system (as part of the user stories for this sprint) on our own whilst collaborating with each other on different aspects of the login system. This was to gauge our skill level which would be immensely important going forward and when assigning tasks.
