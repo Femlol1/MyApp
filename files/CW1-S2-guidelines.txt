@@ -8,7 +8,8 @@ This entails
 • Helpful comments and changes configurations are well documented
 • Have peer code assessments
 • No errors with building each iteration of the programs
-• This program should work 100% of the time while the user is using it appropriately
+• This program should compile 100% of the time
+• Program should handle all of user inputs correctly.
 • This program must be easy to understand and make use of
 • This program must have a clear and simple user interface
 
