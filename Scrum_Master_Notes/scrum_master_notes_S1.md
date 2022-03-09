@@ -1,8 +1,10 @@
 # Scrum Master Report
 
-## Author: Abdul Nafey Mohammed
+## Sprint: 1 (From: 2 Feb and To: 16 Feb)
 
-## University username: anm30
+## Author: Abdul Nafey Mohammed (anm30)
+
+
 
 ### What went well?
 
