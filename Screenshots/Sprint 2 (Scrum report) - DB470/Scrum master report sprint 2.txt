@@ -1,0 +1,19 @@
+> 1st Stand up (start)
+The group immediately discussed and chose their user stories to work on from the adjusted sprint board after the first sprint meeting. 
+However, at least 1/3 of the work that we will be completing this sprint is work that should have been completed during the previous sprint. 
+The validation was completed very quickly once the sprint had begun because it was something left out from the previous sprint. 
+
+Important features that we are focusing on this sprint: 
+
+- registration validation
+- patient creation page
+- patient viewing page
+- set up online database storage and management with the application
+
+> 2nd Stand up (middle)
+Taking a look at the board and the user stories available we have completed one important feature which is a validation of the registration. 
+We have not completed all the work set from the previous sprint and can focus on the patient creation and view with the online databases management in the application. 
+
+> 3rd stand up (end)
+This is the finial Stand up report of this sprint. We have completed all but one of our chosen issues - the “start scenarios” issue was supposed to done this sprint but was removed and place into the following sprint 3. 
+As a group we were happy with the changes made in our choice of issues as we completed the main problem which was to add new patients to the firebase database online as well gain access to view the patient data online in our application. 
