@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
+
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Show"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nxtbutton3"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/bckbutton3" />
+
+    <Button
+        android:id="@+id/nxtbutton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/bckbutton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="back"
+        app:layout_constraintBottom_toBottomOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button3" />
+
+    <EditText
+        android:id="@+id/nokaid"
+        android:layout_width="280dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Recent Source of Water:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName12"
+        android:layout_width="280dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Recent Sanitation System:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.663" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName13"
+        android:layout_width="280dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Long Term Enviroment Exposure:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.707" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName14"
+        android:layout_width="280dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Natural Catastrophe Exposure:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.751" />
+
+    <EditText
+        android:id="@+id/hospitalid"
+        android:layout_width="280dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Communicable Disease Contact:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.531" />
+
+    <EditText
+        android:id="@+id/nokid"
+        android:layout_width="280dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Recent Source of Food:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.574" />
+
+    <EditText
+        android:id="@+id/idtypen_umid"
+        android:layout_width="280dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Disease Vectors:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.443" />
+
+    <EditText
+        android:id="@+id/addressid"
+        android:layout_width="280dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Recent Travel Migration:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <EditText
+        android:id="@+id/rdateid"
+        android:layout_width="280dp"
+        android:layout_height="26dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Endemic Disease Region:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.399" />
+
+    <TextView
+        android:id="@+id/Scenarioviewlogo"
+        android:layout_width="217dp"
+        android:layout_height="40dp"
+        android:text="Patient View"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/nameid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <EditText
+        android:id="@+id/nameid"
+        android:layout_width="280dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Ambient Temperature "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <EditText
+        android:id="@+id/genderid"
+        android:layout_width="280dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Weather Transition:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
+
+    <EditText
+        android:id="@+id/mstatusid"
+        android:layout_width="280dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Relative Humidity:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.355" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Geographical/Epidemiological Factors"
+        android:textColor="@color/design_default_color_error"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Scenarioviewlogo"
+        app:layout_constraintVertical_bias="0.032" />
+
+    <TextView
+        android:id="@+id/aTempView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/nameid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toEndOf="@+id/nameid"
+        app:layout_constraintTop_toTopOf="@+id/nameid" />
+
+    <TextView
+        android:id="@+id/wTransView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toEndOf="@+id/genderid"
+        app:layout_constraintTop_toBottomOf="@+id/aTempView" />
+
+    <TextView
+        android:id="@+id/relativeHumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toEndOf="@+id/mstatusid"
+        app:layout_constraintTop_toBottomOf="@+id/wTransView" />
+
+    <TextView
+        android:id="@+id/EDRView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toEndOf="@+id/rdateid"
+        app:layout_constraintTop_toBottomOf="@+id/relativeHumView" />
+
+    <TextView
+        android:id="@+id/DvectorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toEndOf="@+id/idtypen_umid"
+        app:layout_constraintTop_toBottomOf="@+id/EDRView" />
+
+    <TextView
+        android:id="@+id/recentTravelMigrationView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toEndOf="@+id/addressid"
+        app:layout_constraintTop_toBottomOf="@+id/DvectorView" />
+
+    <TextView
+        android:id="@+id/comunicabledisieasecontactView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toEndOf="@+id/hospitalid"
+        app:layout_constraintTop_toBottomOf="@+id/recentTravelMigrationView" />
+
+    <TextView
+        android:id="@+id/RecentSourceOfFoodView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/nokid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toEndOf="@+id/nokid"
+        app:layout_constraintTop_toTopOf="@+id/nokid"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/RecentSourseOfFoodView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/nokaid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toEndOf="@+id/nokaid"
+        app:layout_constraintTop_toTopOf="@+id/nokaid"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/RecentSanitationSystemView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName12"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName12"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/LongTermExposureView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName13"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName13"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/NaturalCatastropheExposureView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName14"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName14"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
