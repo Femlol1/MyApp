@@ -9,6 +9,21 @@
 
 
     <TextView
+        android:id="@+id/addScenario"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="248dp"
+        android:layout_marginBottom="108dp"
+        android:background="@drawable/dashboardwidgetsbg"
+        android:gravity="center"
+        android:text="Add Scenario"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/email" />
+
+    <TextView
         android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,12 +85,12 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="60dp"
-        android:layout_marginBottom="252dp"
+        android:layout_marginBottom="44dp"
         android:background="@drawable/dashboardwidgetsbg"
         android:gravity="center"
         android:text="Email"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/addScenario"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

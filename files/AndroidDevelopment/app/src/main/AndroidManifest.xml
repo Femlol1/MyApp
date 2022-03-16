@@ -13,6 +13,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLogin">
         <activity
+            android:name=".SymptomPopUp"
+            android:theme="@style/AppTheme.CustomTheme"
+            ></activity>
+        <activity
+            android:name=".AddAllergyPopUp"
+            android:theme="@style/AppTheme.CustomTheme"
+            ></activity>
+        <activity
+            android:name=".AddPastTreatmentPopUp"
+            android:theme="@style/AppTheme.CustomTheme"
+            ></activity>
+        <activity
+            android:name=".AddPastDiagnosisPopUp"
+            android:theme="@style/AppTheme.CustomTheme"
+            ></activity>
+        <activity
+            android:name=".AddScenarioDetails"
+            android:exported="false" />
+        <activity
+            android:name=".AddScenarioSearch"
+            android:exported="false" />
+        <activity
             android:name=".PatientViewActivity"
             android:exported="false" />
         <activity

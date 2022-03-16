@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView viewPatients;
 
+    private TextView addScenario;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         viewPatients = findViewById(R.id.viewPatients);
         viewPatients.setOnClickListener(this);
 
+        addScenario = findViewById(R.id.addScenario);
+        addScenario.setOnClickListener(this);
 
     }
     public void goToLoginPage(View view) {
@@ -39,7 +43,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.viewPatients:
                 startActivity(new Intent(MainActivity.this, PatientViewActivity.class));
-
+                break;
+            case R.id.addScenario:
+                startActivity(new Intent(MainActivity.this, AddScenarioSearch.class));
+                break;
         }
     }
 }

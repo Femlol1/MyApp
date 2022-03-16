@@ -16,6 +16,10 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientV
     Context context;
     ArrayList<Patient> list;
 
+    public PatientAdapter() {
+
+    }
+
     public PatientAdapter(Context context, ArrayList<Patient> list) {
         this.context = context;
         this.list = list;
