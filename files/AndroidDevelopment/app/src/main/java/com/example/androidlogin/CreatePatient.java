@@ -6,12 +6,15 @@ import java.util.Date;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
@@ -33,6 +36,7 @@ public class CreatePatient extends AppCompatActivity implements View.OnClickList
 
     // Declare patient object that can be modified in other classes too
     public static Patient patient;
+    private int mDate,mMonnth , mYear;
 
 
     @Override
@@ -52,6 +56,7 @@ public class CreatePatient extends AppCompatActivity implements View.OnClickList
         inputNextOfKin = (EditText) findViewById(R.id.editTextNextOfKin);
         inputNextOfKinAddress = (EditText) findViewById(R.id.editTextNextOfKinAddress);
 
+
         registerForContextMenu(inputGender);
 
         // Instantiate a patient object whose attributes can be updated with user inputs
@@ -68,6 +73,26 @@ public class CreatePatient extends AppCompatActivity implements View.OnClickList
         btnCpNext = findViewById(R.id.btnCpNext);
         btnCpNext.setOnClickListener(this);
 
+       /* inputRegDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Calendar inputRegDate = Calendar.getInstance();
+                mDate = inputRegDate2.get(Calendar.DATE);
+                mMonnth = inputRegDate2.get(Calendar.MONTH);
+                mYear = inputRegDate2.get(Calendar.YEAR);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(CreatePatient.this, andriod.R.style, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                        inputRegDate.setText(
+)
+                    }
+                })
+
+
+
+            }
+        });*/
+
     }
 
     @Override
@@ -78,6 +103,7 @@ public class CreatePatient extends AppCompatActivity implements View.OnClickList
 
 
     }
+
 
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
