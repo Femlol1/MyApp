@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Patient_View_Activity extends AppCompatActivity implements View.OnClickListener{
+public class Patient_View_Activity extends AppCompatActivity {
     TextView Name, Date_of_birth, Gender, Marital_status, Registration_date, Id_type_and_number, Address, Hospital, Next_of_kin, Next_of_kin_address;
     Button showbutton, nxtbutton, bckbutton;
     DatabaseReference reff;
@@ -39,24 +40,37 @@ public class Patient_View_Activity extends AppCompatActivity implements View.OnC
         nxtbutton = (Button) findViewById(R.id.nxtbutton);
         bckbutton = (Button) findViewById(R.id.bckbutton);
 
-        showbutton.setOnClickListener(this);
-        nxtbutton.setOnClickListener(this);
-        bckbutton.setOnClickListener(this);
+//        showbutton.setOnClickListener((View.OnClickListener) this);
+//        nxtbutton.setOnClickListener((View.OnClickListener) this);
+//        bckbutton.setOnClickListener((View.OnClickListener) this);
 
 
-      /**  nxtbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switch (v.getId()) {
-                    case R.id.nxtbutton:
-                        nextButton();
-                        break;
-                }*/
+
+//            @Override
+//            public void onClick(View view) {
+//                switch (v.getId()) {
+//                    case R.id.nxtbutton:
+//                        nextButton();
+//                        break;
+               nxtbutton.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View view) {
+                       startActivity(new Intent(Patient_View_Activity.this, Patient_View_Activity2.class));;
+                       Toast.makeText(Patient_View_Activity.this, "Next Page", Toast.LENGTH_SHORT).show();
+                   }
+               });
+               bckbutton.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                    public void onClick(View view) {
+                    startActivity(new Intent(Patient_View_Activity.this, MainActivity.class));;
+                    Toast.makeText(Patient_View_Activity.this, "Main Page", Toast.LENGTH_SHORT).show();
+                }
+            });
 
                 showbutton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        reff = FirebaseDatabase.getInstance().getReference().child("Patients").child("-MwTyhkNMmDKD5QZ7Hm4");
+                        reff = FirebaseDatabase.getInstance().getReference().child("Patients").child("-MwRF1xWUMZgj0yfbmhX");
                         reff.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -80,7 +94,12 @@ public class Patient_View_Activity extends AppCompatActivity implements View.OnC
                                 Hospital.setText(hospital);
                                 Next_of_kin.setText(nextOfKin);
                                 Next_of_kin_address.setText(nextOfKinAddress);
+
                             }
+
+
+
+
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError error) {
@@ -95,8 +114,5 @@ public class Patient_View_Activity extends AppCompatActivity implements View.OnC
             }
 
 
-    @Override
-    public void onClick(View view) {
 
-    }
 }
