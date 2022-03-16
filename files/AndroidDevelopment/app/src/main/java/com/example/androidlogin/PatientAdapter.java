@@ -102,4 +102,8 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientV
             relativeHumidity = itemView.findViewById(R.id.textViewRelativeHumidity);
         }
     }
+    public void filterPatientList(ArrayList<Patient> filteredPatientList) {
+        list = filteredPatientList;
+        notifyDataSetChanged();
+    }
 }

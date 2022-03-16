@@ -3,7 +3,10 @@ package com.example.androidlogin;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 // This class's purpose if to gather the list of patients and present them to the user in activity_patient_view
 public class PatientViewActivity extends AppCompatActivity implements View.OnClickListener {
@@ -33,6 +37,23 @@ public class PatientViewActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_patient_view);
 
         TextView backBtn = findViewById(R.id.textViewBackFromPatientView);
+        EditText editTextPatientSearch = findViewById(R.id.editTextPatientSearch);
+        editTextPatientSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
+        });
 
         backBtn.setOnClickListener(this);
 
@@ -67,6 +88,17 @@ public class PatientViewActivity extends AppCompatActivity implements View.OnCli
 
             }
         });
+    }
+
+    private void filter(String text) {
+        ArrayList<Patient> filteredPatientList = new ArrayList<>();
+
+        for (Patient patient : list) {
+            if (patient.getName().toLowerCase().contains(text.toLowerCase())) {
+                filteredPatientList.add(patient);
+            }
+        }
+        patientAdapter.filterPatientList(filteredPatientList);
     }
 
     @Override
