@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Scenario {
 
     private String patientUID;
-    private String Allergy;
+    private ArrayList<String> Allergy = new ArrayList<>();
     private String smokingHabit;
     private String consumptionHabit;
-    private Diagnosis Diagnoses;
-    private Treatment Treatments;
-    private Symptom Symptoms;
+    private ArrayList<Diagnosis> Diagnoses = new ArrayList<>();
+    private ArrayList<Treatment> Treatments = new ArrayList<>();
+    private ArrayList<Symptom> Symptoms = new ArrayList<>();
 
     public Scenario () {};
 
@@ -22,11 +22,11 @@ public class Scenario {
         this.patientUID = patient;
     }
 
-    public String getAllergy() {
+    public ArrayList<String> getAllergy() {
         return Allergy;
     }
 
-    public void setAllergy(String allergy) {
+    public void setAllergy(ArrayList<String> allergy) {
         Allergy = allergy;
     }
 
@@ -46,27 +46,27 @@ public class Scenario {
         this.consumptionHabit = consumptionHabit;
     }
 
-    public Diagnosis getDiagnoses() {
+    public ArrayList<Diagnosis> getDiagnoses() {
         return Diagnoses;
     }
 
-    public void setDiagnoses(Diagnosis diagnoses) {
+    public void setDiagnoses(ArrayList<Diagnosis> diagnoses) {
         Diagnoses = diagnoses;
     }
 
-    public Treatment getTreatments() {
+    public ArrayList<Treatment> getTreatments() {
         return Treatments;
     }
 
-    public void setTreatments(Treatment treatments) {
+    public void setTreatments(ArrayList<Treatment> treatments) {
         Treatments = treatments;
     }
 
-    public Symptom getSymptoms() {
+    public ArrayList<Symptom> getSymptoms() {
         return Symptoms;
     }
 
-    public void setSymptoms(Symptom symptoms) {
+    public void setSymptoms(ArrayList<Symptom> symptoms) {
         Symptoms = symptoms;
     }
 }

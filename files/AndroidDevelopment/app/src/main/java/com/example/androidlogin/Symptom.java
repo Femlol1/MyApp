@@ -5,6 +5,10 @@ public class Symptom {
 
     public Symptom() {};
 
+    public String toString(){
+        return "Symptom Type: "+symptomType+", Symptom Description: "+desc;
+    }
+
     public String getSymptomType() {
         return symptomType;
     }

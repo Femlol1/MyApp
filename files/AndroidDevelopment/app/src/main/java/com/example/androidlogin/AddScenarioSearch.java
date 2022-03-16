@@ -44,6 +44,8 @@ public class AddScenarioSearch extends AppCompatActivity {
     private AutoCompleteTextView txtSearch;
     private RecyclerView listData;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

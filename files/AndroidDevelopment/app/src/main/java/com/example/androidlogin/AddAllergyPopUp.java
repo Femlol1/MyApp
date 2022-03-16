@@ -50,10 +50,11 @@ public class AddAllergyPopUp extends AppCompatActivity implements View.OnClickLi
 
     private void validate() {
         String allergy = inputAllergy.getText().toString().trim();
-        //scenario.setAllergy(allergy);
-        //System.out.println(scenario.getAllergy());
+        scenario.getAllergy().add(allergy);
+        System.out.println(scenario.getAllergy());
         //startActivity(new Intent(AddAllergyPopUp.this, AddScenarioDetails.class));
 
+        finish();
         Toast.makeText(AddAllergyPopUp.this, "Allergy added!", Toast.LENGTH_LONG).show();
     }
 }

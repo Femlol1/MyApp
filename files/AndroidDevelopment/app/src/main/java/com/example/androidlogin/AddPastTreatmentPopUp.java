@@ -21,6 +21,8 @@ public class AddPastTreatmentPopUp extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pasttreatmentswindow);
 
+        t = new Treatment();
+
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
@@ -49,11 +51,19 @@ public class AddPastTreatmentPopUp extends AppCompatActivity implements View.OnC
         String TreatmentDate = inputTreatmentDate.getText().toString().trim();
         String Treatment = inputTreatment.getText().toString().trim();
 
-        //t.setDate(TreatmentDate);
-        //t.setName(Treatment);
+        //Validation for dob to be of length - 10 characters of the format: DD/MM/YYYY
+        if (TreatmentDate.length() != 10) {
+            inputTreatmentDate.setError("Dob should be in the format DD/MM/YYYY");
+            inputTreatmentDate.requestFocus();
+            return;
+        }
 
-        //scenario.setTreatments(t);
+        t.setDate(TreatmentDate);
+        t.setName(Treatment);
 
+        scenario.getTreatments().add(t);
+
+        finish();
         Toast.makeText(AddPastTreatmentPopUp.this, "Treatment added!", Toast.LENGTH_LONG).show();
     }
 }

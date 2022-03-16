@@ -22,6 +22,8 @@ public class AddPastDiagnosisPopUp extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pastdiagnosiswindow);
 
+        diagnosisObj = new Diagnosis();
+
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
@@ -50,10 +52,19 @@ public class AddPastDiagnosisPopUp extends AppCompatActivity implements View.OnC
         String diagnosisDate = inputDiagnosisDate.getText().toString().trim();
         String diagnosis = inputDiagnosis.getText().toString().trim();
 
-        //diagnosisObj.setDate(diagnosisDate);
-        //diagnosisObj.setName(diagnosis);
+        //Validation for Diagnosis date to be of length - 10 characters of the format: DD/MM/YYYY
+        if (diagnosisDate.length() != 10) {
+            inputDiagnosisDate.setError("Date should be in the format DD/MM/YYYY");
+            inputDiagnosisDate.requestFocus();
+            return;
+        }
 
-        //scenario.setDiagnoses(diagnosisObj);
+        diagnosisObj.setDate(diagnosisDate);
+        diagnosisObj.setName(diagnosis);
+
+        scenario.getDiagnoses().add(diagnosisObj);
+
+        finish();
         Toast.makeText(AddPastDiagnosisPopUp.this, "Diagnosis added!", Toast.LENGTH_LONG).show();
 
 

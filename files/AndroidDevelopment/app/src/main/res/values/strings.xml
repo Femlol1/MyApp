@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Android Login</string>
+    <string name="app_name">VICTA Mobile</string>
+    <string-array name="symptomtypes">
+        <item>Incident</item>
+        <item>Epidemiology</item>
+        <item>Complaint</item>
+        <item>Examination</item>
+    </string-array>
 </resources>

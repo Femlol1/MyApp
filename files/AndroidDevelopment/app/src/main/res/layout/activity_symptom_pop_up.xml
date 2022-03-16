@@ -16,8 +16,8 @@
         android:text="Enter Symtom Type"
         android:textSize="30sp" />
 
-    <EditText
-        android:id="@+id/editTextASSymptomType"
+    <Spinner
+        android:id="@+id/spinnerASSymptomType"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/textViewASEnterSymptomType"
@@ -31,7 +31,7 @@
         android:id="@+id/textViewASSymptomDesc"
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:layout_below="@+id/editTextASSymptomType"
+        android:layout_below="@+id/spinnerASSymptomType"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
