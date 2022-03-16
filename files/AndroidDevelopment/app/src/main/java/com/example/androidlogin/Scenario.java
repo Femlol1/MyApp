@@ -2,6 +2,9 @@ package com.example.androidlogin;
 
 import java.util.ArrayList;
 
+//Scenario object class has all information needed to Add Scenario and View Scenario.
+//Instances of this object are stored in the database under Scenarios.
+
 public class Scenario {
 
     private String patientUID;

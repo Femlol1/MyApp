@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class AddAllergyPopUp extends AppCompatActivity implements View.OnClickListener{
 
+    //Define all text inputs and buttons in the front-end
     EditText inputAllergy;
     Button btnAddAllergy;
 
@@ -24,20 +25,20 @@ public class AddAllergyPopUp extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.addallergieswindow);
 
+        //Pop-up window sizing
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
-
         int width = dm.widthPixels;
         int height = dm.heightPixels;
-
         getWindow().setLayout((int) (width * .8), (int) (height * .6));
 
+        //Connect UI elements to corresponding defined variables
         inputAllergy = findViewById(R.id.editTextAllergy);
-
         btnAddAllergy = findViewById(R.id.btnAddAllergy);
         btnAddAllergy.setOnClickListener(this);
     }
 
+    //When a button is pressed...
     @Override
     public void onClick(View view) {
         switch(view.getId()){
@@ -48,12 +49,23 @@ public class AddAllergyPopUp extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    //Validate user input
     private void validate() {
-        String allergy = inputAllergy.getText().toString().trim();
-        scenario.getAllergy().add(allergy);
-        System.out.println(scenario.getAllergy());
-        //startActivity(new Intent(AddAllergyPopUp.this, AddScenarioDetails.class));
 
+        //Store text from input box in variable(s)
+        String allergy = inputAllergy.getText().toString().trim();
+
+        //Empty allergy must not be added
+        if (allergy.isEmpty()) {
+            inputAllergy.setError("Allergy name required! Click outside to cancel");
+            inputAllergy.requestFocus();
+            return;
+        }
+
+        //Assign allergy attribute to scenario object
+        scenario.getAllergy().add(allergy);
+
+        //Close the pop-up and display responsiveness of user's action
         finish();
         Toast.makeText(AddAllergyPopUp.this, "Allergy added!", Toast.LENGTH_LONG).show();
     }

@@ -1,5 +1,6 @@
 package com.example.androidlogin;
 
+//Diagnosis object(s) are used in scenarios. Can be multiple.
 public class Diagnosis {
     private String date;
     private String name;

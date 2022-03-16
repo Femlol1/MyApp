@@ -1,5 +1,6 @@
 package com.example.androidlogin;
 
+//Treatment object(s) are used in scenarios. Can be multiple.
 public class Treatment {
 
     private String date, name;

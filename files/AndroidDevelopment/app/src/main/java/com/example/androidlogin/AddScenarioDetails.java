@@ -26,13 +26,16 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AddScenarioDetails extends AppCompatActivity implements View.OnClickListener{
 
+    //Declare a scenario object accessible from all class in the directory
     public static Scenario scenario;
 
+    //Declare all front end elements and treatment object
     private FloatingActionButton addAllergy, addPastDiagnosis, addPastTreatments;
     private Button btnAddSymptom, btnCreateScenario;
     private EditText inputSmokingHabit, inputConsumptionHabit;
     private ProgressBar progressBar;
 
+    //Declare a database reference, will be used later to connect/point to our database
     DatabaseReference ref;
 
     @Override
@@ -40,8 +43,7 @@ public class AddScenarioDetails extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_scenario_details);
 
-        scenario = new Scenario();
-
+        //Connect UI elements to corresponding defined variables
         btnAddSymptom = (Button) findViewById(R.id.addSymptonBttn);
         btnAddSymptom.setOnClickListener(this);
 
@@ -62,17 +64,22 @@ public class AddScenarioDetails extends AppCompatActivity implements View.OnClic
         inputConsumptionHabit = findViewById(R.id.editTextConsumptionHabits);
         inputSmokingHabit = findViewById(R.id.editTextSmokingHabit);
 
+        //Instantiate the declared scenario object
+        scenario = new Scenario();
 
+        //Get the intent passed from AddScenarioSearch.java class
         Intent intent = getIntent();
         String key = intent.getStringExtra("key");
 
+        //Set up a reference to our realtime firebase database.
+        //Search for the Patients node and get UID of patient selected in search patient
         ref = FirebaseDatabase.getInstance().getReference("Patients");
         Query query = ref.orderByKey().equalTo(key);
         scenario.setPatient(key);
-        //System.out.println(key);
+
     }
 
-
+    //When any button is pressed...
     @Override
     public void onClick(View view) {
         switch(view.getId()){
@@ -94,26 +101,27 @@ public class AddScenarioDetails extends AppCompatActivity implements View.OnClic
         }
     }
 
+    //Validate user input before assigning them to scenario object's attributes.
     private void validate() {
+
+        //Store text from input box in variable(s). Don't need to check if they are empty since these are optional fields
         String smokingHabit = inputSmokingHabit.getText().toString().trim();
         String consumptionHabit = inputConsumptionHabit.getText().toString().trim();
 
+        //Assign smoking and consumption habit attributes to our scenario object.
         scenario.setSmokingHabit(smokingHabit);
         scenario.setConsumptionHabit(consumptionHabit);
-
-
-        //System.out.println(scenario.getPatient()+", "+scenario.getSymptoms()+", "+scenario.getTreatments()+", "+scenario.getDiagnoses()+", "+scenario.getAllergy());
 
         // When the patient object is being written to Firebase Real-time Database, make the progress bar visible to give UI responsiveness
         progressBar.setVisibility(View.VISIBLE);
 
-        //Find the Patients node in the database, create auto-generated UID and write a patient object with all its attributes.
+        //Find the Scenarios node in the database, create auto-generated UID and write a scenario object with all its attributes.
         //Implement an onCompleteListener to check if the data write is successful.
         FirebaseDatabase.getInstance().getReference().child("Scenarios").push().setValue(scenario).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
-                // If successful, tell the user the patient has been added
+                // If successful, tell the user the scenario has been added
                 if (task.isSuccessful()) {
                     Toast.makeText(AddScenarioDetails.this, "Scenario added successfully!", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);

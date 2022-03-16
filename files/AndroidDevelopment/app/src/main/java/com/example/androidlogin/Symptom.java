@@ -1,5 +1,6 @@
 package com.example.androidlogin;
 
+//Symptom object(s) are used in scenarios. Can be multiple.
 public class Symptom {
     private String symptomType, desc;
 
