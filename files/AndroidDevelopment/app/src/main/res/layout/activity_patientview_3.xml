@@ -22,11 +22,12 @@
         android:id="@+id/nxtbutton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="32dp"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button3" />
+        app:layout_constraintTop_toTopOf="@+id/button3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/bckbutton3"
@@ -99,7 +100,7 @@
         app:layout_constraintVertical_bias="0.751" />
 
     <EditText
-        android:id="@+id/hospitalid"
+        android:id="@+id/idOccupationalHistory"
         android:layout_width="280dp"
         android:layout_height="23dp"
         android:background="@drawable/input_bg"
@@ -129,7 +130,7 @@
         app:layout_constraintVertical_bias="0.574" />
 
     <EditText
-        android:id="@+id/idtypen_umid"
+        android:id="@+id/idprofesstionalT"
         android:layout_width="280dp"
         android:layout_height="23dp"
         android:background="@drawable/input_bg"
@@ -144,7 +145,7 @@
         app:layout_constraintVertical_bias="0.443" />
 
     <EditText
-        android:id="@+id/addressid"
+        android:id="@+id/idTrainingHistory"
         android:layout_width="280dp"
         android:layout_height="23dp"
         android:background="@drawable/input_bg"
@@ -298,7 +299,7 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.815"
-        app:layout_constraintStart_toEndOf="@+id/idtypen_umid"
+        app:layout_constraintStart_toEndOf="@+id/idprofesstionalT"
         app:layout_constraintTop_toBottomOf="@+id/EDRView" />
 
     <TextView
@@ -309,7 +310,7 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.815"
-        app:layout_constraintStart_toEndOf="@+id/addressid"
+        app:layout_constraintStart_toEndOf="@+id/idTrainingHistory"
         app:layout_constraintTop_toBottomOf="@+id/DvectorView" />
 
     <TextView
@@ -320,7 +321,7 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.815"
-        app:layout_constraintStart_toEndOf="@+id/hospitalid"
+        app:layout_constraintStart_toEndOf="@+id/idOccupationalHistory"
         app:layout_constraintTop_toBottomOf="@+id/recentTravelMigrationView" />
 
     <TextView
@@ -336,7 +337,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/RecentSourseOfFoodView"
+        android:id="@+id/RecentSourceOfWaterView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -357,7 +358,7 @@
         app:layout_constraintHorizontal_bias="0.812"
         app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName12"
         app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName12"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/LongTermExposureView"

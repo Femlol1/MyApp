@@ -55,7 +55,7 @@
             android:name=".Patient_View_Activity2"
             android:exported="false" />
         <activity
-            android:name=".patient_View_Activity3"
+            android:name=".Patient_View_Activity3"
             android:exported="false" />
 
 

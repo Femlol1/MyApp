@@ -3,14 +3,19 @@ package com.example.androidlogin;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -18,8 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class CreatePatient extends AppCompatActivity implements View.OnClickListener {
 
     // Declare all the input fields for the general info page
-    private EditText inputName, inputDob, inputGender, inputMaritalStatus, inputRegDate, inputIdAndNo, inputAddress, inputHospital, inputNextOfKin, inputNextOfKinAddress;
-
+    private EditText inputName, inputDob, inputMaritalStatus, inputRegDate, inputIdAndNo, inputAddress, inputHospital, inputNextOfKin, inputNextOfKinAddress;
+    private TextView inputGender;
     // Declare back button
     private ImageButton btnCpBack;
 
@@ -38,7 +43,7 @@ public class CreatePatient extends AppCompatActivity implements View.OnClickList
         //Connect the input field variables to the Edit Text elements in the corresponding activity_create_patient.xml
         inputName = (EditText) findViewById(R.id.editTextName);
         inputDob = (EditText) findViewById(R.id.editTextDob);
-        inputGender = (EditText) findViewById(R.id.editTextGender);
+        inputGender = (TextView) findViewById(R.id.editTextGender);
         inputMaritalStatus = (EditText) findViewById(R.id.editTextMaritalStatus);
         inputRegDate = (EditText) findViewById(R.id.editTextRegDate);
         inputIdAndNo = (EditText) findViewById(R.id.editTextIdTypeAndNo);
@@ -46,6 +51,8 @@ public class CreatePatient extends AppCompatActivity implements View.OnClickList
         inputHospital = (EditText) findViewById(R.id.editTextHospital);
         inputNextOfKin = (EditText) findViewById(R.id.editTextNextOfKin);
         inputNextOfKinAddress = (EditText) findViewById(R.id.editTextNextOfKinAddress);
+
+        registerForContextMenu(inputGender);
 
         // Instantiate a patient object whose attributes can be updated with user inputs
         patient = new Patient();
@@ -61,6 +68,31 @@ public class CreatePatient extends AppCompatActivity implements View.OnClickList
         btnCpNext = findViewById(R.id.btnCpNext);
         btnCpNext.setOnClickListener(this);
 
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        getMenuInflater().inflate(R.menu.gender_menu,menu);
+
+
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.Male:
+                inputGender.setText("Male");
+                break;
+            case R.id.Female:
+                inputGender.setText("Female");
+                break;
+            case R.id.Other:
+                inputGender.setText("Other");
+                break;
+        }
+        return super.onContextItemSelected(item);
     }
 
     // Define the actions for any button click
