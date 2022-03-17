@@ -6,6 +6,7 @@ import java.util.Date;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.icu.util.Calendar;
@@ -36,7 +37,13 @@ public class CreatePatient extends AppCompatActivity implements View.OnClickList
 
     // Declare patient object that can be modified in other classes too
     public static Patient patient;
-    private int mDate,mMonnth , mYear;
+    private int mDate,mMonth , mYear;
+
+    //Declare the date picker
+    private DatePickerDialog datePickerDialog;
+    private Button dateButton1;
+    private Button dateButton2;
+
 
 
     @Override
@@ -55,6 +62,10 @@ public class CreatePatient extends AppCompatActivity implements View.OnClickList
         inputHospital = (EditText) findViewById(R.id.editTextHospital);
         inputNextOfKin = (EditText) findViewById(R.id.editTextNextOfKin);
         inputNextOfKinAddress = (EditText) findViewById(R.id.editTextNextOfKinAddress);
+        initDatePicker();
+        dateButton1 = (Button) findViewById(R.id.calbutton1);
+        dateButton2 = (Button) findViewById(R.id.calbutton2);
+        inputDob.setText(getTodaysDate());
 
 
         registerForContextMenu(inputGender);
@@ -94,6 +105,18 @@ public class CreatePatient extends AppCompatActivity implements View.OnClickList
         });*/
 
     }
+
+    private String getTodaysDate()
+    {
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        month = month +1;
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        return makeDateString(day, month, year);
+
+    }
+
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -228,5 +251,38 @@ public class CreatePatient extends AppCompatActivity implements View.OnClickList
         // Start the new activity: Ethnic Info, when all validation is done
         startActivity(intent);
 
+    }
+
+    private void initDatePicker() {
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                String date = makeDateString(day, month , year);
+                inputDob.setText(date);
+
+            }
+        };
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+
+        int style = AlertDialog.THEME_HOLO_LIGHT;
+        datePickerDialog = new DatePickerDialog(this,style, dateSetListener,year,month, day);
+        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+
+
+    }
+
+    private String makeDateString(int day, int month, int year) {
+
+        return day +"/"+ month +"/"+ year;
+
+
+    }
+    public void openDatePicker(View view) {
+
+        datePickerDialog.show();
     }
 }
