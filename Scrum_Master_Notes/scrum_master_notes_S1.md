@@ -1,5 +1,40 @@
 # Scrum Master Report
 
+## sprint: 0 (From: 17 Jan and To: 26th Jan )
+
+## Author Femi Osibemekun (oo158)
+
+### What went well?
+
+* I was able to update our scrum board and allow my team members to choose their own tasks.
+  We were able to set up the group rules.
+  I created tasks and user stories on the scrum board.
+  We created the definition of done for the project.
+  We where able to talk about the questions we needed to ask the client and come up with explicit questions. 
+  We had a meeting on wednesday (19th Jan 2022) to talk about to make decisions on the questions for the client and the user stories for the project.
+
+
+### What duties did I perform well as a Scrum Master
+* I was able to set up meeting with the other group members and keep track of their attendance.
+  I kept in touch with all the members of the group.
+  I created Isuues for the user stories for the client.
+  I made sure weights where assigned to all the issues on the scrum board.
+
+
+### What duties could I have performed better?
+
+* I could have put more effort into creating the scrum board 
+  I should have added mire information into the issues i created for the user stories 
+  I should have reached out to more my groupmates more 
+  
+
+
+
+
+
+
+
+
 ## Sprint: 1 (From: 2 Feb and To: 16 Feb)
 
 ## Author: Abdul Nafey Mohammed (anm30)
