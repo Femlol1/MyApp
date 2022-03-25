@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Patient_View_Activity"
+    android:background="@drawable/bg">
+
+
+    <TextView
+        android:id="@+id/Scenarioviewlogo"
+        android:layout_width="217dp"
+        android:layout_height="40dp"
+        android:text="Patient View"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/nameid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="General Information "
+        android:textColor="@color/design_default_color_error"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Scenarioviewlogo"
+        app:layout_constraintVertical_bias="0.032" />
+
+    <TextView
+        android:id="@+id/nameid"
+        android:layout_width="147dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Name:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <TextView
+        android:id="@+id/genderid"
+        android:layout_width="147dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Gender: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.313" />
+
+    <TextView
+        android:id="@+id/dob"
+        android:layout_width="147dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Dob"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.364" />
+
+    <TextView
+        android:id="@+id/genderview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/genderid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintStart_toEndOf="@+id/nameid"
+        app:layout_constraintTop_toTopOf="@+id/genderid" />
+
+    <TextView
+        android:id="@+id/mstatusid"
+        android:layout_width="147dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Marital Status:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.396" />
+
+    <TextView
+        android:id="@+id/hospitalview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/idOccupationalHistory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintStart_toEndOf="@+id/idOccupationalHistory"
+        app:layout_constraintTop_toTopOf="@+id/idOccupationalHistory" />
+
+    <TextView
+        android:id="@+id/nokaview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nokaid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toEndOf="@+id/nokaid"
+        app:layout_constraintTop_toTopOf="@+id/nokaid"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/idprofesstionalT"
+        android:layout_width="147dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  ID Type and No:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <TextView
+        android:id="@+id/addressview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/idTrainingHistory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintStart_toEndOf="@+id/idTrainingHistory"
+        app:layout_constraintTop_toTopOf="@+id/idTrainingHistory" />
+
+    <TextView
+        android:id="@+id/nokview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/nokid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toEndOf="@+id/nokid"
+        app:layout_constraintTop_toTopOf="@+id/nokid" />
+
+    <TextView
+        android:id="@+id/nokaid"
+        android:layout_width="176dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Next of kin address:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.662" />
+
+    <TextView
+        android:id="@+id/rdateview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/rdateid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintStart_toEndOf="@+id/rdateid"
+        app:layout_constraintTop_toTopOf="@+id/rdateid" />
+
+    <TextView
+        android:id="@+id/idOccupationalHistory"
+        android:layout_width="147dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Hospital:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.573" />
+
+    <TextView
+        android:id="@+id/mstatusview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/mstatusid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintStart_toEndOf="@+id/mstatusid"
+        app:layout_constraintTop_toBottomOf="@+id/dob" />
+
+    <TextView
+        android:id="@+id/idview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/idprofesstionalT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toEndOf="@+id/idprofesstionalT"
+        app:layout_constraintTop_toTopOf="@+id/idprofesstionalT" />
+
+    <TextView
+        android:id="@+id/idTrainingHistory"
+        android:layout_width="147dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Address:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.528" />
+
+    <TextView
+        android:id="@+id/nokid"
+        android:layout_width="147dp"
+        android:layout_height="23dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Next of kin:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.617" />
+
+    <TextView
+        android:id="@+id/rdateid"
+        android:layout_width="171dp"
+        android:layout_height="26dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Registration Date:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.436" />
+
+    <TextView
+        android:id="@+id/nameview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/nameid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toEndOf="@+id/nameid"
+        app:layout_constraintTop_toTopOf="@+id/nameid"
+        app:layout_constraintVertical_bias="0.272" />
+
+    <TextView
+        android:id="@+id/dobview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dob"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintStart_toEndOf="@+id/dob"
+        app:layout_constraintTop_toTopOf="@+id/dob" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Show"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nxtbutton"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toEndOf="@+id/bckbutton" />
+
+    <Button
+        android:id="@+id/nxtbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+    <Button
+        android:id="@+id/bckbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="back"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

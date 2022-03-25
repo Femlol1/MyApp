@@ -12,6 +12,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView createPatient;
 
     private TextView viewPatients;
+    private TextView startScenario;
+    private TextView viewPatientsF;
 
     private TextView addScenario;
 
@@ -20,14 +22,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         createPatient = (TextView) findViewById(R.id.addPatient);
         createPatient.setOnClickListener(this);
 
         viewPatients = findViewById(R.id.viewPatients);
         viewPatients.setOnClickListener(this);
 
+<<<<<<< HEAD
         addScenario = findViewById(R.id.addScenario);
         addScenario.setOnClickListener(this);
+=======
+        startScenario =(TextView) findViewById(R.id.startScenario);
+        startScenario.setOnClickListener(this);
+
+        viewPatientsF =(TextView) findViewById(R.id.viewPatientsFemi);
+        viewPatientsF.setOnClickListener(this);
+>>>>>>> develop
 
     }
     public void goToLoginPage(View view) {
@@ -44,9 +55,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.viewPatients:
                 startActivity(new Intent(MainActivity.this, PatientViewActivity.class));
                 break;
+<<<<<<< HEAD
             case R.id.addScenario:
                 startActivity(new Intent(MainActivity.this, AddScenarioSearch.class));
                 break;
+=======
+            case R.id.startScenario:
+                startActivity(new Intent(MainActivity.this, Scenario_View.class));
+                break;
+            case R.id.viewPatientsFemi:
+                startActivity(new Intent(MainActivity.this, Patient_View_Activity.class));
+                break;
+
+
+>>>>>>> develop
         }
     }
 }

@@ -1,4 +1,5 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">VICTA Mobile</string>
     <string-array name="symptomtypes">
         <item>Incident</item>
@@ -6,4 +7,13 @@
         <item>Complaint</item>
         <item>Examination</item>
     </string-array>
+=======
+    <string name="app_name">Android Login</string>
+    <string-array name="gender_Types">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    
+>>>>>>> develop
 </resources>
