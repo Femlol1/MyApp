@@ -12,28 +12,27 @@
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:padding="10dp"
+        android:layout_marginRight="20dp"
         android:fontFamily="@font/nunito_sans_semibold"
-        android:text="Search Patient"
+        android:padding="10dp"
+        android:text="Search Scenario Code"
         android:textColor="@android:color/holo_orange_dark"
-        android:textSize="40sp"
-         />
+        android:textSize="30sp" />
 
     <AutoCompleteTextView
         android:id="@+id/editTextSSScenarioCode"
-        android:layout_below="@+id/textViewStartScenarioCode"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_below="@+id/textViewStartScenarioCode"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/searchicon"
         android:drawablePadding="15dp"
         android:fontFamily="@font/oxygen_light"
-        android:hint="Enter patient's full name"
+        android:hint="Enter 6 digit code e.g. 000001"
         android:paddingStart="15dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
@@ -44,10 +43,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/scenarioListSS"
-        android:layout_below="@id/editTextSSScenarioCode"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/editTextSSScenarioCode"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp" />
 </RelativeLayout>

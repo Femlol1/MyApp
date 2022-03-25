@@ -115,6 +115,13 @@ public class AddScenarioDetails extends AppCompatActivity implements View.OnClic
         // When the patient object is being written to Firebase Real-time Database, make the progress bar visible to give UI responsiveness
         progressBar.setVisibility(View.VISIBLE);
 
+        if (scenario.getSymptoms().size() == 0){
+            System.out.println(scenario.getSymptoms());
+            Toast.makeText(AddScenarioDetails.this, "Scenario cannot be added without a symptom", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(AddScenarioDetails.this, AddScenarioDetails.class));
+
+        }
+
         //Find the Scenarios node in the database, create auto-generated UID and write a scenario object with all its attributes.
         //Implement an onCompleteListener to check if the data write is successful.
         FirebaseDatabase.getInstance().getReference().child("Scenarios").push().setValue(scenario).addOnCompleteListener(new OnCompleteListener<Void>() {

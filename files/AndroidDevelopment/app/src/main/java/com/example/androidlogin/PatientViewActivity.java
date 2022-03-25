@@ -22,7 +22,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 // This class's purpose if to gather the list of patients and present them to the user in activity_patient_view
 public class PatientViewActivity extends AppCompatActivity implements View.OnClickListener {
@@ -106,9 +105,9 @@ public class PatientViewActivity extends AppCompatActivity implements View.OnCli
         switch (view.getId()) {
             //This will take the user back to the main page when the back button is clicked
             case R.id.textViewBackFromPatientView:
-                Toast.makeText(this,"Back button clicked", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(PatientViewActivity.this, MainActivity.class));
                 break;
         }
     }
+
 }
