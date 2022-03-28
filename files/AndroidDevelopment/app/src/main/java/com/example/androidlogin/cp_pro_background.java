@@ -11,9 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 public class cp_pro_background extends AppCompatActivity implements View.OnClickListener{
 
     // Declare all the input fields for the professional background page
@@ -32,7 +29,7 @@ public class cp_pro_background extends AppCompatActivity implements View.OnClick
 
         // Declare all the input fields for the Professional Background page
         inputProTraining = findViewById(R.id.editTextProfessionalTraining);
-        inputTrainingHistory = findViewById(R.id.editTextTrainingHistory);
+        inputTrainingHistory = findViewById(R.id.editTextEnterDiagnosis);
         inputOccupationalHistory = findViewById(R.id.editTextOccupationalHistory);
 
         btnCpPbBack = (ImageButton) findViewById(R.id.btnCpBack3);

@@ -231,7 +231,7 @@ public class StartScenarioSearch extends AppCompatActivity {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
             LayoutInflater layoutInflater=LayoutInflater.from(viewGroup.getContext());
-            View view = layoutInflater.inflate(R.layout.row_style_as_search_patient,viewGroup,false);
+            View view = layoutInflater.inflate(R.layout.row_style_ss_search_patient,viewGroup,false);
             return new ViewHolder(view);
         }
 

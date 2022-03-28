@@ -55,11 +55,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/imageView2"
             app:layout_constraintStart_toEndOf="@+id/textViewOccupationalHistory"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTrainingHistory"
+            app:layout_constraintTop_toBottomOf="@+id/editTextEnterDiagnosis"
             app:layout_constraintVertical_bias="0.092" />
 
         <EditText
-            android:id="@+id/editTextTrainingHistory"
+            android:id="@+id/editTextEnterDiagnosis"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="6dp"
@@ -108,7 +108,7 @@
             app:layout_constraintEnd_toEndOf="@+id/imageView2"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/editTextTrainingHistory"
+            app:layout_constraintTop_toTopOf="@+id/editTextEnterDiagnosis"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
