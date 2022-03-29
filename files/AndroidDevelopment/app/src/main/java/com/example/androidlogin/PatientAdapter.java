@@ -106,4 +106,5 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientV
         list = filteredPatientList;
         notifyDataSetChanged();
     }
+
 }

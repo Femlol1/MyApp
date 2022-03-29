@@ -13,6 +13,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLogin">
         <activity
+            android:name=".SendScenarioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartScenarioSearch"
+            android:exported="false" />
+        <activity
+            android:name=".StartScenario"
+            android:exported="false" />
+        <activity
+            android:name=".SymptomPopUp"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".AddAllergyPopUp"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".AddPastTreatmentPopUp"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".AddPastDiagnosisPopUp"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".AddScenarioDetails"
+            android:exported="false" />
+        <activity
+            android:name=".AddScenarioSearch"
+            android:exported="false" />
+        <activity
             android:name=".PatientViewActivity"
             android:exported="false" />
         <activity
@@ -45,20 +72,6 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
-        <activity
-            android:name=".Scenario_View"
-            android:exported="false" />
-        <activity
-            android:name=".Patient_View_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".Patient_View_Activity2"
-            android:exported="false" />
-        <activity
-            android:name=".Patient_View_Activity3"
-            android:exported="false" />
-
-
 
         <meta-data
             android:name="preloaded_fonts"
