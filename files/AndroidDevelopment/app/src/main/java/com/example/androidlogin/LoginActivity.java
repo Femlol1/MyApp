@@ -49,10 +49,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btnLogin:
                 Login();
                 break;
-                /*if (login() == false) {
-                    Intent Intent = new Intent(this, MainActivity.class);
-                    startActivity(Intent);
-                }*/
         }
     }
     private void Login() {
@@ -87,7 +83,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+                    String currentUser = inputemail;
+
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }else{
                     Toast.makeText(LoginActivity.this,"Failed to login! Please check your credentials or internet!", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
