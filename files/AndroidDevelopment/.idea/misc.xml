@@ -35,7 +35,8 @@
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.21145833333333333" />
         <entry key="app/src/main/res/layout/activity_scenario_view.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_scenario_view2.xml" value="0.4036458333333333" />
-        <entry key="app/src/main/res/layout/activity_start_scenario.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_ss_treatment.xml" value="0.3974358974358974" />
+        <entry key="app/src/main/res/layout/activity_start_scenario.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_start_scenario_search.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_symptom_pop_up.xml" value="0.22" />
         <entry key="app/src/main/res/layout/addallergieswindow.xml" value="0.24895833333333334" />

@@ -15,9 +15,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,16 +31,19 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class StartScenario extends AppCompatActivity {
+public class StartScenario extends AppCompatActivity implements View.OnClickListener{
 
-    private TextView Allergies, SmokingHistory, AlxhoholConsunptionHistory, PostDiagnosis,PostTreatmment,Symptoms, symptomYetToReveal;
+    private TextView Allergies, SmokingHistory, AlxhoholConsunptionHistory, PostDiagnosis,PostTreatmment, treatment, symptomYetToReveal;
     private EditText diagnosisInput;
-    private Button btnRevealSymptom, btnTreatPatient;
+    private Button btnRevealSymptom, btnTreatPatient, btnGoToSummary;
     private DatabaseReference scenarioRef;
-    private Integer totalSymptoms;
+    private Integer totalSymptoms = 1;
     private Integer clickCount = 0;
 
+    private ScrollView myScrollView;
     private RecyclerView symptomList;
+    private UserDiagnosis userDiagnosis;
+    private StepDiagnosis stepDiagnosis;
 
     ArrayList<Symptom> scenarioSymptoms = new ArrayList<>();
     ArrayList<String> userDiagnosisInputs = new ArrayList<>();
@@ -54,11 +62,8 @@ public class StartScenario extends AppCompatActivity {
         PostDiagnosis = findViewById(R.id.pDiagnosisView);
         PostTreatmment = findViewById(R.id.pTreatmentView);
         diagnosisInput = findViewById(R.id.editTextEnterDiagnosis);
-        //Symptoms = (TextView) findViewById(R.id.textsymptomexplanation);
 
-        //Create a linear layout manager which can create multiple views/screens linearly.
-        //The content of recycler view is set to the manager to allow multiple mini screens
-        //in the form of search results to appear
+        myScrollView = findViewById(R.id.ssScrollView);
 
         //Connect the RecyclerView element to the back-end
         symptomList = findViewById(R.id.recyclerViewSS);
@@ -68,20 +73,24 @@ public class StartScenario extends AppCompatActivity {
         //Get the intent passed from StartScenarioSearch.java class
         Intent intent = getIntent();
         String key = intent.getStringExtra("key");
-        System.out.println(key);
 
         btnRevealSymptom = (Button) findViewById(R.id.buttonRevealSymptom);
         btnTreatPatient = (Button) findViewById(R.id.buttonTreatPatient);
+        btnTreatPatient.setOnClickListener(this);
 
+
+        userDiagnosis = new UserDiagnosis();
 
         scenarioRef = FirebaseDatabase.getInstance().getReference().child("Scenarios").child(key);
 
-        btnTreatPatient.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(StartScenario.this, "we are going to go further in sprint 4", Toast.LENGTH_SHORT).show();
-            }
-        });
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String userEmail = user.getEmail();
+            userDiagnosis.setUserID(userEmail);
+        } else {
+            // No user is signed in
+        }
+
 
         //View a scenario. Shows one specific working example
         btnRevealSymptom.setOnClickListener(new View.OnClickListener() {
@@ -91,25 +100,45 @@ public class StartScenario extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                        String allergies="None", smokingHistory="None", alcohol="None", pdiagnosisDate="None", pdiagnosisName = "None", ptreatmentDate="None", ptreatmentName="None", symptom="None";
+                        String allergy, smokingHistory="None", alcohol="None", pdiagnosisDate="None", pdiagnosisName = "None", ptreatmentDate="None", ptreatmentName="None", symptom="None";
+
+
+                        myScrollView.fullScroll(ScrollView.FOCUS_UP);
 
                         totalSymptoms = (int) dataSnapshot.child("symptoms").getChildrenCount();
-                        System.out.println("There are "+totalSymptoms+" symptoms");
-
-                        if (clickCount < totalSymptoms){
+                        //System.out.println("There are "+totalSymptoms+" symptoms");
+                        userDiagnosis.setScenarioCode(dataSnapshot.child("scenarioCode").getValue().toString());
+                        if (clickCount <= totalSymptoms){
                             Symptom aSymptom;
                             aSymptom = new Symptom();
+                            stepDiagnosis = new StepDiagnosis();
 
                             aSymptom.setSymptomType(dataSnapshot.child("symptoms").child(Integer.toString(clickCount)).child("symptomType").getValue().toString());
                             aSymptom.setDesc(dataSnapshot.child("symptoms").child(Integer.toString(clickCount)).child("desc").getValue().toString());
                             scenarioSymptoms.add(aSymptom);
 
-                            System.out.println(scenarioSymptoms);
-                        }
-                        clickCount += 1;
+                            if (clickCount == 1) {
+                                stepDiagnosis.setStepSymptom(scenarioSymptoms.get(0));
+                                System.out.println("Click count: "+clickCount);
+                            }else if (clickCount > 1){
+                                stepDiagnosis.setStepSymptom(scenarioSymptoms.get(clickCount-1));
+                            }
+                            stepDiagnosis.setStepNo(clickCount);
 
+                            System.out.println("Scenario Symptoms: "+scenarioSymptoms);
+                        }
+
+
+                        String allergies = "";
                         if (!(dataSnapshot.child("allergy").getValue() == null)){
-                            allergies = dataSnapshot.child("allergy").getValue().toString();
+                            int totalAllergies = (int) dataSnapshot.child("allergy").getChildrenCount();
+
+
+                            for (int i=0; i<totalAllergies; i++) {
+                                allergy = dataSnapshot.child("allergy").child(Integer.toString(i)).getValue().toString();
+                                System.out.println("ALLERGY: "+allergy);
+                                allergies = allergies + allergy + "\n";
+                            }
                         }
 
                         if (!(dataSnapshot.child("smokingHabit").getValue() == null)){
@@ -128,7 +157,6 @@ public class StartScenario extends AppCompatActivity {
                             for (int i=0; i<totalDiagnoses; i++) {
                                 pdiagnosisDate = dataSnapshot.child("diagnoses").child(Integer.toString(i)).child("date").getValue().toString();
                                 pdiagnosisName = dataSnapshot.child("diagnoses").child(Integer.toString(i)).child("name").getValue().toString();
-                                System.out.println(pdiagnosisDate+"    "+pdiagnosisName);
                                 diagnoses = diagnoses + "Diagnosis:- \nDate: " + pdiagnosisDate + "\nDiagnosis: " +pdiagnosisName+"\n\n";
                             }
                         }
@@ -142,19 +170,30 @@ public class StartScenario extends AppCompatActivity {
                             for (int i=0; i<totalTreatments; i++) {
                                 ptreatmentDate = dataSnapshot.child("treatments").child(Integer.toString(i)).child("date").getValue().toString();
                                 ptreatmentName = dataSnapshot.child("treatments").child(Integer.toString(i)).child("name").getValue().toString();
-                                treatments = treatments + "Treatment:- \nDate: " + ptreatmentDate + "\n Description: " +ptreatmentName+"\n\n";
+                                treatments = treatments + "Treatment:- \nDate: " + ptreatmentDate + "\nDescription: " +ptreatmentName+"\n\n";
                             }
                         }
 
+                        //allergies = "None";
                         Allergies.setText(allergies);
                         SmokingHistory.setText(smokingHistory);
                         AlxhoholConsunptionHistory.setText(alcohol);
                         PostDiagnosis.setText(diagnoses);
                         PostTreatmment.setText(treatments);
-                        String diagnosisAtAStep = diagnosisInput.getText().toString().trim();
 
-                        userDiagnosisInputs.add(diagnosisAtAStep);
-                        System.out.println(userDiagnosisInputs);
+
+                        if (clickCount != 0) {
+                            String diagnosisAtAStep = diagnosisInput.getText().toString().trim();
+                            stepDiagnosis.setStepDiagnosis(diagnosisAtAStep);
+                            userDiagnosis.getScenarioDiagnoses().add(stepDiagnosis);
+                            System.out.println("Step diagnosis: " + stepDiagnosis + "  User Diagnosis: " + userDiagnosis);
+                            diagnosisInput.getText().clear();
+
+                            userDiagnosisInputs.add(diagnosisAtAStep);
+                            System.out.println("User Diagnosis inputs: "+userDiagnosisInputs);
+                        }
+                        clickCount += 1;
+
 
 
 
@@ -182,6 +221,73 @@ public class StartScenario extends AppCompatActivity {
 
 
 
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.buttonTreatPatient:
+
+                if (clickCount < totalSymptoms){
+                    Toast.makeText(StartScenario.this,"Reveal all symptoms first!", Toast.LENGTH_LONG).show();
+                }else{
+                    btnTreatPatient.setBackgroundColor(Color.parseColor("#4b8ad1"));
+                    treatPatient();
+                }
+                break;
+            case R.id.btnGoToSummary:
+                summarizeScenario();
+                break;
+        }
+    }
+
+    private void treatPatient() {
+        if (clickCount != 0) {
+
+            Symptom aSymptom;
+            aSymptom = new Symptom();
+            stepDiagnosis = new StepDiagnosis();
+            String diagnosisAtAStep = diagnosisInput.getText().toString().trim();
+            stepDiagnosis.setStepNo(clickCount);
+            stepDiagnosis.setStepDiagnosis(diagnosisAtAStep);
+            stepDiagnosis.setStepSymptom(scenarioSymptoms.get(clickCount-1));
+            userDiagnosis.getScenarioDiagnoses().add(stepDiagnosis);
+            System.out.println(userDiagnosis.toString());
+            diagnosisInput.getText().clear();
+
+            userDiagnosisInputs.add(diagnosisAtAStep);
+            System.out.println("User Diagnosis inputs: "+userDiagnosisInputs);
+
+
+        }
+
+        setContentView(R.layout.activity_ss_treatment);
+
+        btnGoToSummary = findViewById(R.id.btnGoToSummary);
+        btnGoToSummary.setOnClickListener(this);
+
+    }
+
+    private void summarizeScenario() {
+
+        treatment = findViewById(R.id.editTextEnterTreatment);
+        String treatmentInput = treatment.getText().toString().trim();
+        userDiagnosis.setTreatment(treatmentInput);
+
+        FirebaseDatabase.getInstance().getReference().child("ScenarioSummary").push().setValue(userDiagnosis).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                // If successful, tell the user the scenario has been added
+                if (task.isSuccessful()) {
+                    Toast.makeText(StartScenario.this, "Scenario completed successfully!", Toast.LENGTH_LONG).show();
+
+                    // Else, give them an error message
+                } else {
+                    Toast.makeText(StartScenario.this, "Scenario not completed! Check internet and try again!", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
     }
 
