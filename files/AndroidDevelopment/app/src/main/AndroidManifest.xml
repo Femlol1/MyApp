@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLogin">
         <activity
+            android:name=".SendScenarioActivity"
+            android:exported="false" />
+        <activity
             android:name=".StartScenarioSearch"
             android:exported="false" />
         <activity

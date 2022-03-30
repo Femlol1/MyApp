@@ -7,6 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView createPatient;
@@ -16,6 +21,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView addScenario;
 
     private TextView startScenario;
+
+    private TextView sendScenario;
+
+    private TextView displayCurrentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +42,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         startScenario =(TextView) findViewById(R.id.startScenario);
         startScenario.setOnClickListener(this);
+
+        sendScenario = (TextView) findViewById(R.id.textViewSendScenario);
+        sendScenario.setOnClickListener(this);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String currentUser = user.getEmail();
+        displayCurrentUser = (TextView) findViewById(R.id.textViewCurrentUserMain);
+        displayCurrentUser.setText(currentUser);
+
+
 
 
     }
@@ -55,6 +74,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.startScenario:
                 startActivity(new Intent(MainActivity.this, StartScenarioSearch.class));
+                break;
+            case R.id.textViewSendScenario:
+                Intent intent = new Intent(MainActivity.this, SendScenarioActivity.class);
+                startActivity(intent);
                 break;
 
         }
